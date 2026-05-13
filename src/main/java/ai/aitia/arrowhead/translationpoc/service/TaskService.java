@@ -48,9 +48,8 @@ import eu.arrowhead.dto.OrchestrationServiceRequirementDTO;
 import eu.arrowhead.dto.ServiceInstanceInterfaceResponseDTO;
 import eu.arrowhead.dto.ServiceInstanceListResponseDTO;
 import eu.arrowhead.dto.ServiceInstanceLookupRequestDTO;
-import eu.arrowhead.dto.enums.AuthorizationTargetType;
-import eu.arrowhead.dto.enums.AuthorizationTokenType;
 import eu.arrowhead.dto.enums.OrchestrationFlag;
+import eu.arrowhead.dto.enums.ServiceInterfacePolicy;
 
 @Service
 public class TaskService {
@@ -150,8 +149,8 @@ public class TaskService {
 		final String topic = getTargetTopic(orchResult);
 		final String bridgeToken = orchResult
 				.authorizationTokens()
-				.get(AuthorizationTokenType.TRANSLATION_BRIDGE_TOKEN.name())
-				.get(AuthorizationTargetType.SERVICE_DEF.name())
+				.get(ServiceInterfacePolicy.TRANSLATION_BRIDGE_TOKEN_AUTH.name())
+				.get("save-ipc2581")
 				.token();
 
 		final MqttRequestTemplate template = new MqttRequestTemplate(

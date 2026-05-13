@@ -25,6 +25,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
@@ -39,7 +43,11 @@ import eu.arrowhead.dto.SystemRegisterRequestDTO;
 import eu.arrowhead.dto.SystemResponseDTO;
 import jakarta.annotation.PreDestroy;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {
+	    DataSourceAutoConfiguration.class, 
+	    DataSourceTransactionManagerAutoConfiguration.class, 
+	    HibernateJpaAutoConfiguration.class
+})
 @ComponentScan(
 	basePackages = { Constants.BASE_PACKAGE, Constants.COMMON_BASE_PACKAGE }, 
 	excludeFilters = { @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = { DefaultSecurityConfig.class }) })

@@ -141,9 +141,7 @@ public class TaskService {
 		}
 
 		final String xmlPayload = Files
-				.readString(xmlFilePath, StandardCharsets.UTF_8)
-				.replace("\n", "")
-				.replace("\r", "");
+				.readString(xmlFilePath, StandardCharsets.UTF_8);
 
 		final OrchestrationResultDTO orchResult = orchResponse.results().get(0);
 		final String topic = getTargetTopic(orchResult);

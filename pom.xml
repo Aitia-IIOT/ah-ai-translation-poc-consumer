@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>ah-ai-translation-poc-consumer</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 	<name>AiTranslationPocConsumer</name>
 	<description>Consumer to demonstrate automatic translation in Arrowhead 5 with AI-based data model translation.</description>
@@ -55,13 +55,13 @@
 	<dependency>
 			<groupId>ai.aitia.arrowhead</groupId>
 			<artifactId>arrowhead-app-common</artifactId>
-			<version>1.0.2</version>
+			<version>1.0.3</version>
 		</dependency>
 
 		<dependency>
 			<groupId>eu.arrowhead</groupId>
 			<artifactId>arrowhead-data-transfer-objects</artifactId>
-			<version>5.2.0</version>
+			<version>5.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
